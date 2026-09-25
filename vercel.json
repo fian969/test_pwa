@@ -1,0 +1,5 @@
+{
+  "buildCommand": "if [ ! -d .flutter ]; then git clone --depth 1 --branch 3.44.9 https://github.com/flutter/flutter.git .flutter; fi && .flutter/bin/flutter config --no-analytics && .flutter/bin/flutter pub get && .flutter/bin/flutter build web --release",
+  "outputDirectory": "build/web",
+  "cleanUrls": true
+}
