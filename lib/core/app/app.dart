@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_setup_clean_architectute/core/di/injection.dart';
 import 'package:flutter_setup_clean_architectute/core/navigation/app_router.dart';
@@ -31,7 +30,7 @@ class App extends StatelessWidget {
             fontFamily: 'Nunito',
             colorScheme: const ColorScheme(
               brightness: Brightness.light,
-              primary: Color(0xFF0087CD),
+              primary:  Color.fromARGB(255, 46, 37, 128),
               onPrimary: Color(0xFFFAFAFA),
               secondary: Color(0xFFFFD700),
               onSecondary: Color(0xFFFAFAFA),
@@ -41,23 +40,6 @@ class App extends StatelessWidget {
               onSurface: Color(0xFF707070),
             ),
           ),
-          builder: (context, child) {
-            final statusBarColor = Theme.of(context).colorScheme.primary;
-            final brightness = ThemeData.estimateBrightnessForColor(
-              statusBarColor,
-            );
-
-            return AnnotatedRegion<SystemUiOverlayStyle>(
-              value: SystemUiOverlayStyle(
-                statusBarColor: statusBarColor,
-                statusBarIconBrightness: brightness == Brightness.dark
-                    ? Brightness.light
-                    : Brightness.dark,
-                statusBarBrightness: brightness,
-              ),
-              child: child ?? const SizedBox.shrink(),
-            );
-          },
         ),
       ),
     );
